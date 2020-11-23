@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true,useUnifiedTopology:true});
-
+//for deploying it on server you need to change this above path mongodb://localhost:27017/todolistDB in mongoose.connect
 const itemsSchema = {
   name: String
 };
@@ -138,3 +138,19 @@ app.get("/about", function(req, res){
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
+
+
+
+
+
+
+//this is default port set,for local machine ,for deploying it on server you need to change the port address
+
+// let port = process.env.PORT;
+// if (port == null || port == "") {
+//   port = 3000;
+// }
+
+// app.listen(port, function() {
+//   console.log("Server has started Successfully ");
+// });
